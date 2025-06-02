@@ -1,0 +1,2184 @@
+Issue #76: [L5] Create Operational Runbooks
+Labels: L5:Observability, Type:Documentation, Comp:Ops, Prio:Medium
+Milestone: Phase 4: Production & Optimization
+## 🎯 Task Objective
+Develop runbooks for key operational procedures: L0 deployment DAG verification, Orchestrator fault handling, Trainer monitoring and validation.
+
+## 📋 Technical Requirements
+- Step-by-step procedures
+- Troubleshooting guides
+- Escalation procedures
+- Validation checklists
+
+## 🎯 Acceptance Criteria
+- [ ] L0 deployment DAG runbook
+- [ ] Orchestrator fault handling guide
+- [ ] Trainer monitoring procedures
+- [ ] Troubleshooting documentation
+- [ ] Escalation procedures
+
+## 📊 Success Metrics
+- Runbook coverage: 100% of critical procedures
+- Mean time to resolution: <30 minutes
+- Escalation accuracy: >95%
+================================================================================
+
+Issue #75: [L5] Implement Security - Compliance Filter in VERD-POD
+Labels: Type:Feature, L5:Observability, Comp:Security, Prio:Medium
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Integrate brand-safety/compliance check (profanity, legal terms, regulatory content) into VERD-POD using regex-based filter or third-party library.
+
+## 📋 Technical Requirements
+- Brand safety rule engine
+- Regulatory term detection
+- Third-party library integration
+- Compliance scoring system
+
+## 🎯 Acceptance Criteria
+- [ ] Brand safety filter
+- [ ] Profanity detection
+- [ ] Legal term flagging
+- [ ] Regulatory compliance check
+- [ ] VERD-POD integration
+
+## 📊 Success Metrics
+- Filter accuracy: >95%
+- Processing latency: <500ms
+- Compliance coverage: 100%
+================================================================================
+
+Issue #74: [L5] Implement Security - Data Scrubbing
+Labels: L5:Observability, Type:Chore, Comp:Security, Prio:Medium
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Ensure ETL Lambda and relevant components strip PII from raw texts (usernames, emails, phone numbers) before processing and storage.
+
+## 📋 Technical Requirements
+- PII detection algorithms
+- Text sanitization pipelines
+- Regex-based filtering
+- Compliance validation
+
+## 🎯 Acceptance Criteria
+- [ ] PII detection implementation
+- [ ] Username/email stripping
+- [ ] Phone number removal
+- [ ] ETL Lambda integration
+- [ ] Compliance validation
+
+## 📊 Success Metrics
+- PII detection accuracy: >99%
+- Processing latency impact: <10%
+- Compliance score: 100%
+================================================================================
+
+Issue #73: [L4] Set up Monitoring & Alerts for Trainers
+Labels: L4:RL-FineTuning, Type:Chore, Comp:Monitoring, Prio:Medium
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Prometheus metrics for trainer loss, policy upload time, reward throughput, and alerts for policy update failures or poor training performance.
+
+## 📋 Technical Requirements
+- Training metrics exposition
+- Loss tracking and alerting
+- Upload time monitoring
+- Performance threshold alerts
+
+## 🎯 Acceptance Criteria
+- [ ] Trainer loss metrics
+- [ ] Policy upload time tracking
+- [ ] Reward throughput monitoring
+- [ ] Policy update failure alerts
+- [ ] Training performance thresholds
+
+## 📊 Success Metrics
+- Metric collection: 99.9% uptime
+- Alert response: <5min for critical issues
+- Dashboard load time: <3s
+================================================================================
+
+Issue #72: [L4] Implement Scaling & Cost Controls for Trainers
+Labels: L4:RL-FineTuning, Type:Chore, Comp:Infra, Prio:Medium
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Configure batch processing for trainers, define compute budgets and resource allocation for AZ-LoRA (A100/80GB, 4-6h), GRPO (2×A10G, 2h), and DPO (A100, 8h).
+
+## 📋 Technical Requirements
+- GPU resource allocation
+- Spot instance bidding
+- Batch processing optimization
+- Cost monitoring integration
+
+## 🎯 Acceptance Criteria
+- [ ] GPU resource allocation
+- [ ] Spot instance configuration
+- [ ] Batch processing (1k messages)
+- [ ] Compute budget limits
+- [ ] Cost monitoring integration
+
+## 📊 Success Metrics
+- Cost efficiency: >80% spot instance usage
+- Resource utilization: >90%
+- Budget adherence: 100%
+================================================================================
+
+Issue #71: [L4] Define Interfaces with Adjacent Layers
+Labels: L4:RL-FineTuning, Type:Chore, Type:Documentation, Prio:Medium
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Document how L2/L3 push rewards, and how L4 trainers update bandit_stats (L1), policy_versions (L1/L2), LoRA weights (L2), and DPO checkpoints (L2).
+
+## 📋 Technical Requirements
+- Reward flow documentation
+- Trainer update specifications
+- Checkpoint management docs
+- Integration test coverage
+
+## 🎯 Acceptance Criteria
+- [ ] Reward flow documentation
+- [ ] Trainer update specifications
+- [ ] Checkpoint management docs
+- [ ] Integration test coverage
+
+## 📊 Success Metrics
+- Documentation coverage: 100% of interfaces
+- Integration test coverage: >90%
+- API schema validation: 100%
+================================================================================
+
+Issue #70: [L4] Set up rl_reward_queue (SQS)
+Labels: Prio:High, L4:RL-FineTuning, Type:Chore, Comp:Infra
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Configure SQS queue for reward messages with defined schema { axis, cluster_id, idea_id, reward, timestamp } and appropriate visibility timeout for retry handling.
+
+## 📋 Technical Requirements
+- SQS queue configuration
+- Message schema definition
+- Visibility timeout optimization
+- Dead letter queue setup
+
+## 🎯 Acceptance Criteria
+- [ ] SQS queue deployment
+- [ ] Message schema validation
+- [ ] 5-minute visibility timeout
+- [ ] Dead letter queue configuration
+- [ ] Consumer group setup
+
+## 📊 Success Metrics
+- Message throughput: >1000 msgs/sec
+- Processing latency: <100ms
+- Error rate: <0.1%
+================================================================================
+
+Issue #69: [L3] Set up Monitoring & Alerts
+Labels: L3:MetaReview, Type:Chore, Comp:Monitoring, Prio:Medium
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Prometheus metrics for grid fill rate, child generation count, and alerts for grid stagnation or low novelty across generations.
+
+## 📋 Technical Requirements
+- Grid fill rate monitoring
+- Generation novelty tracking
+- Stagnation detection algorithms
+- Novelty threshold alerting
+
+## 🎯 Acceptance Criteria
+- [ ] Grid fill rate metrics
+- [ ] Child generation count tracking
+- [ ] Stagnation detection (>3 gens)
+- [ ] Low novelty alerts (<0.1)
+- [ ] Exploration stagnation warnings
+
+## 📊 Success Metrics
+- Metric collection: 99.9% uptime
+- Alert response: <5min for critical issues
+- Dashboard load time: <3s
+================================================================================
+
+Issue #68: [L3] Define Data Stores & Schemas
+Labels: Prio:High, L3:MetaReview, Type:Chore, Comp:Database
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Set up Postgres tables: elite_grid, parent_map (optional), generation_metadata. Ensure population table integration and proper indexing.
+
+## 📋 Technical Requirements
+- Elite grid schema design
+- Parent mapping system
+- Generation metadata tracking
+- Performance optimization
+
+## 🎯 Acceptance Criteria
+- [ ] elite_grid table schema
+- [ ] parent_map table design
+- [ ] generation_metadata structure
+- [ ] Population table integration
+- [ ] Index optimization
+- [ ] Foreign key constraints
+
+## 📊 Success Metrics
+- Query performance: <100ms for grid operations
+- Storage efficiency: <1GB for grid data
+- Integrity: 100% referential integrity
+================================================================================
+
+Issue #67: [L3] Implement Offspring Enqueue Mechanism
+Labels: Type:Feature, L3:MetaReview, Comp:Evolution, Prio:Medium
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Enqueue final child ideas into L2 BN-queue via Orchestrator. Persist lineage in population table and handle cluster assignment (parent cluster or jump-to logic).
+
+## 📋 Technical Requirements
+- BN-queue integration
+- Lineage tracking system
+- Cluster assignment logic
+- Generation management
+
+## 🎯 Acceptance Criteria
+- [ ] BN-queue enqueue logic
+- [ ] Lineage persistence
+- [ ] Cluster assignment algorithm
+- [ ] Generation tracking
+- [ ] Orchestrator integration
+
+## 📊 Success Metrics
+- Enqueue success rate: 100%
+- Lineage tracking accuracy: 100%
+- Processing latency: <30s
+================================================================================
+
+Issue #66: [L2] Set up Monitoring & Alerts
+Labels: L2:DialoguePod, Type:Chore, Comp:Monitoring, Prio:Medium
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Prometheus metrics for pod cost/latency, skip rates, Elo drift, and alerts for high costs or unexpected behavior patterns.
+
+## 📋 Technical Requirements
+- Pod cost tracking
+- Latency monitoring
+- Skip rate metrics
+- Elo drift detection
+- Cost overrun alerts
+- Behavior anomaly detection
+
+## 🎯 Acceptance Criteria
+- [ ] Pod cost tracking
+- [ ] Latency monitoring
+- [ ] Skip rate metrics
+- [ ] Elo drift detection
+- [ ] Cost overrun alerts
+- [ ] Behavior anomaly detection
+
+## 📊 Success Metrics
+- Metric collection: 99.9% uptime
+- Alert response: <5min for critical issues
+- Dashboard load time: <3s
+================================================================================
+
+Issue #65: [L2] Define Interfaces with Adjacent Layers
+Labels: L2:DialoguePod, Type:Chore, Type:Documentation, Prio:Medium
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Document and implement data contracts: L1 cluster_ids input, L3 population writes, L0 memory integration, L4 reward queue outputs.
+
+## 📋 Technical Requirements
+- L1 interface documentation
+- L3 data contract specification
+- L0 memory integration spec
+- L4 reward queue schema
+- Integration test coverage
+
+## 🎯 Acceptance Criteria
+- [ ] L1 interface documentation
+- [ ] L3 data contract specification
+- [ ] L0 memory integration spec
+- [ ] L4 reward queue schema
+- [ ] Integration test coverage
+
+## 📊 Success Metrics
+- Documentation coverage: 100% of interfaces
+- Integration test coverage: >90%
+- API schema validation: 100%
+================================================================================
+
+Issue #64: [L2] Implement Scaling & Cost Control Mechanisms
+Labels: L2:DialoguePod, Type:Feature, Comp:Orchestrator, Prio:Medium
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement configurable pods_per_stage, debate gate (confidence > 0.8), token caps per agent, and autoscaler logic based on cost and entropy thresholds.
+
+## 📋 Technical Requirements
+- Configuration-driven scaling
+- Cost-based autoscaling
+- Entropy-based pod skipping
+- Token limit enforcement
+
+## 🎯 Acceptance Criteria
+- [ ] Configurable pods_per_stage
+- [ ] Debate gate implementation
+- [ ] Token caps per agent type
+- [ ] Cost-based autoscaler
+- [ ] Entropy-based skipping logic
+- [ ] Budget monitoring integration
+
+## 📊 Success Metrics
+- Cost control: Budget adherence 100%
+- Scaling efficiency: >90%
+- Performance impact: <5%
+================================================================================
+
+Issue #63: [L2] Define Data Stores & Schemas
+Labels: Prio:High, L2:DialoguePod, Type:Chore, Comp:Database
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Set up Postgres tables: pod_transcript, pod_metrics, population, elo_ratings. Implement TTL/archival for pod_transcript with 30-day S3 export.
+
+## 📋 Technical Requirements
+- Postgres schema design
+- JSONB for flexible transcript storage
+- TTL policies and archival automation
+- Indexing strategy for performance
+
+## 🎯 Acceptance Criteria
+- [ ] pod_transcript table with JSONB
+- [ ] pod_metrics table design
+- [ ] population table schema
+- [ ] elo_ratings table
+- [ ] 30-day TTL implementation
+- [ ] S3 archival automation
+
+## 📊 Success Metrics
+- Query performance: <100ms for common queries
+- Storage efficiency: <10GB for 30-day retention
+- Archival success: 100%
+================================================================================
+
+Issue #62: [L1] Set up Monitoring & Alerts
+Labels: L1:Allocation, Type:Chore, Comp:Monitoring, Prio:Medium
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Prometheus metrics for UCB scores, budget shares, selection counts, and alerts for lagged rewards or policy update failures.
+
+## 📋 Technical Requirements
+- UCB score metrics
+- Budget allocation tracking
+- Selection count monitoring
+- Policy update alerts
+- Reward lag detection
+
+## 🎯 Acceptance Criteria
+- [ ] UCB score metrics
+- [ ] Budget allocation tracking
+- [ ] Selection count monitoring
+- [ ] Policy update alerts
+- [ ] Reward lag detection
+
+## 📊 Success Metrics
+- Metric collection: 99.9% uptime
+- Alert response: <5min for critical issues
+- Dashboard load time: <3s
+================================================================================
+
+Issue #61: [L1] Define Data Interfaces and Contracts
+Labels: L1:Allocation, Type:Chore, Type:Documentation, Prio:Medium
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Document and implement data contracts for L1 interactions: reads trend_clusters (L0), elite_grid (L3); Orchestrator calls SelectClusters; trainers update stats/policies.
+
+## 📋 Technical Requirements
+- Data contract documentation
+- Interface specifications
+- API schema definitions
+- Integration test suite
+
+## 🎯 Acceptance Criteria
+- [ ] Data contract documentation
+- [ ] Interface specifications
+- [ ] API schema definitions
+- [ ] Integration test suite
+
+## 📊 Success Metrics
+- Documentation coverage: 100% of interfaces
+- Integration test coverage: >90%
+- API schema validation: 100%
+================================================================================
+
+Issue #60: [L0] Set up Monitoring & Alerts
+Labels: L0:Ingestion, Type:Chore, Comp:Monitoring, Prio:Medium
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Implement Prometheus metrics and alerts for Kafka lag, embedding errors, clustering job durations, and R-GAT training performance.
+
+## 📋 Technical Requirements
+- Prometheus metrics exposition
+- Grafana dashboard creation
+- AlertManager rule configuration
+- PagerDuty integration
+
+## 🎯 Acceptance Criteria
+- [ ] Kafka lag monitoring
+- [ ] Embedding error rate tracking
+- [ ] Job duration metrics
+- [ ] Alert rules configuration
+- [ ] Grafana dashboards
+
+## 📊 Success Metrics
+- Alert response time: <5 minutes
+- Dashboard load time: <3 seconds
+- Monitoring coverage: 100% of components
+================================================================================
+
+Issue #59: [L0] Develop Nightly Graph-Build Job - Trend Clusters Management
+Labels: L0:Ingestion, Type:Feature, Comp:Database, Prio:Medium
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Define trend_clusters table schema and implement upsert logic for cluster data including axis_mix, centroid_vec, size, and entropy calculations.
+
+## 📋 Technical Requirements
+- trend_clusters table design
+- Centroid calculation from cluster members
+- Entropy computation (1 - size/total_events)
+- Axis mix analysis and JSON storage
+
+## 🎯 Acceptance Criteria
+- [ ] trend_clusters table schema
+- [ ] Centroid vector calculation
+- [ ] Entropy computation logic
+- [ ] Axis mix analysis
+- [ ] Upsert logic implementation
+- [ ] S3 export for dashboards
+
+## 📊 Success Metrics
+- Cluster update latency: <30 minutes
+- Entropy calculation accuracy: >99%
+- Dashboard export success: 100%
+================================================================================
+
+Issue #58: [L0] Develop Nightly Graph-Build Job - R-GAT Embedding
+Labels: L0:Ingestion, Type:Feature, Comp:ML, Prio:Medium
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement R-GAT training (2-layer Graph Attention Network) running Mon/Thu. Construct graph with kNN edges and store vec_rgat embeddings.
+
+## 📋 Technical Requirements
+- Graph construction with kNN=30 within clusters
+- kINTER=5 nearest across clusters
+- 2-layer GAT implementation (256 dims)
+- PyTorch/DGL implementation
+
+## 🎯 Acceptance Criteria
+- [ ] Graph construction algorithm
+- [ ] 2-layer GAT implementation
+- [ ] Training pipeline (Mon/Thu schedule)
+- [ ] vec_rgat storage in events_vector
+- [ ] Training metrics and monitoring
+
+## 📊 Success Metrics
+- Training convergence: <3 hours
+- Embedding quality: >0.8 downstream task performance
+- Graph connectivity: >95% nodes connected
+================================================================================
+
+Issue #57: [L0] Develop Nightly Graph-Build Job - HDBSCAN Clustering
+Labels: L0:Ingestion, Type:Feature, Comp:ML, Prio:Medium
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement HDBSCAN clustering on recent data (30 days) from events_vector table. Assign cluster_id to each event with configurable parameters.
+
+## 📋 Technical Requirements
+- HDBSCAN library integration
+- Parameter tuning (min_cluster_size=30, min_samples=15)
+- Cluster assignment and validation
+- Performance optimization for large datasets
+
+## 🎯 Acceptance Criteria
+- [ ] HDBSCAN clustering implementation
+- [ ] Parameter configuration system
+- [ ] Cluster assignment to events_vector
+- [ ] Performance monitoring and optimization
+- [ ] Cluster quality metrics
+
+## 📊 Success Metrics
+- Clustering quality: >0.7 silhouette score
+- Processing time: <2 hours for 30-day data
+- Cluster count: 50-200 meaningful clusters
+================================================================================
+
+Issue #56: [L0] Set up Embedding Workers (Ray on EKS)
+Labels: L0:Ingestion, Prio:High, Type:Feature, Comp:Embedding, Comp:Infra
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Deploy Ray cluster on EKS for embedding workers. Configure OpenAI text-embedding-3-small or open-source fallback. Implement batch processing and Aurora-Postgres integration.
+
+## 📋 Technical Requirements
+- Ray cluster deployment on EKS
+- OpenAI API integration with fallback
+- Batch processing optimization (N=32)
+- Aurora-Postgres connection pooling
+
+## 🎯 Acceptance Criteria
+- [ ] Ray cluster on EKS deployment
+- [ ] OpenAI embedding API integration
+- [ ] Open-source embedding fallback (SBERT)
+- [ ] Batch processing implementation
+- [ ] Aurora-Postgres integration
+- [ ] Prometheus metrics exposure
+
+## 📊 Success Metrics
+- Embedding rate: >1000 embeddings/min
+- API error rate: <1%
+- Batch efficiency: >90%
+================================================================================
+
+Issue #55: [DEPLOY] Configure Auto-Scaling Profiles
+Labels: Prio:High, Type:Chore, Comp:Infra
+Milestone: Phase 4: Production & Optimization
+## 🎯 Task Objective
+Set up and configure deployment environment with proper scaling and monitoring.
+
+## 📋 Technical Requirements
+- Infrastructure deployment
+- Auto-scaling configuration
+- Monitoring integration
+- Performance optimization
+
+## 🎯 Acceptance Criteria
+- [ ] Environment deployed successfully
+- [ ] Auto-scaling functional
+- [ ] Monitoring active
+- [ ] Performance validated
+
+## 📊 Success Metrics
+- Deployment success: 100%
+- Scaling efficiency: >90%
+- Uptime: >99.9%
+================================================================================
+
+Issue #54: [DEPLOY] Set up Prod Environment
+Labels: Prio:High, Type:Chore, Comp:Infra
+Milestone: Phase 4: Production & Optimization
+## 🎯 Task Objective
+Set up and configure deployment environment with proper scaling and monitoring.
+
+## 📋 Technical Requirements
+- Infrastructure deployment
+- Auto-scaling configuration
+- Monitoring integration
+- Performance optimization
+
+## 🎯 Acceptance Criteria
+- [ ] Environment deployed successfully
+- [ ] Auto-scaling functional
+- [ ] Monitoring active
+- [ ] Performance validated
+
+## 📊 Success Metrics
+- Deployment success: 100%
+- Scaling efficiency: >90%
+- Uptime: >99.9%
+================================================================================
+
+Issue #53: [DEPLOY] Set up Test Environment
+Labels: Prio:High, Type:Chore, Comp:Infra
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Set up and configure deployment environment with proper scaling and monitoring.
+
+## 📋 Technical Requirements
+- Infrastructure deployment
+- Auto-scaling configuration
+- Monitoring integration
+- Performance optimization
+
+## 🎯 Acceptance Criteria
+- [ ] Environment deployed successfully
+- [ ] Auto-scaling functional
+- [ ] Monitoring active
+- [ ] Performance validated
+
+## 📊 Success Metrics
+- Deployment success: 100%
+- Scaling efficiency: >90%
+- Uptime: >99.9%
+================================================================================
+
+Issue #52: [DEPLOY] Set up Dev Environment
+Labels: Prio:High, Type:Chore, Comp:Infra
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Set up and configure deployment environment with proper scaling and monitoring.
+
+## 📋 Technical Requirements
+- Infrastructure deployment
+- Auto-scaling configuration
+- Monitoring integration
+- Performance optimization
+
+## 🎯 Acceptance Criteria
+- [ ] Environment deployed successfully
+- [ ] Auto-scaling functional
+- [ ] Monitoring active
+- [ ] Performance validated
+
+## 📊 Success Metrics
+- Deployment success: 100%
+- Scaling efficiency: >90%
+- Uptime: >99.9%
+================================================================================
+
+Issue #51: [L5] Implement Human Jury Gate - UI
+Labels: Prio:High, Type:Feature, L5:Observability, Comp:UI
+Milestone: Phase 4: Production & Optimization
+## 🎯 Task Objective
+Implement Human Jury Gate - UI for comprehensive observability, security, and governance.
+
+## 📋 Technical Requirements
+- System monitoring and alerting
+- Security compliance
+- Cost control mechanisms
+- Human oversight integration
+
+## 🎯 Acceptance Criteria
+- [ ] System implementation complete
+- [ ] Monitoring and alerting active
+- [ ] Security compliance verified
+- [ ] Performance optimization active
+
+## 📊 Success Metrics
+- Monitoring coverage: 99.9%
+- Security compliance: 100%
+- Cost control: Budget adherence 100%
+================================================================================
+
+Issue #50: [L5] Implement Human Jury Gate - Backend & Table
+Labels: Prio:High, Type:Feature, L5:Observability, Comp:Governance
+Milestone: Phase 4: Production & Optimization
+## 🎯 Task Objective
+Implement Human Jury Gate - Backend & Table for comprehensive observability, security, and governance.
+
+## 📋 Technical Requirements
+- System monitoring and alerting
+- Security compliance
+- Cost control mechanisms
+- Human oversight integration
+
+## 🎯 Acceptance Criteria
+- [ ] System implementation complete
+- [ ] Monitoring and alerting active
+- [ ] Security compliance verified
+- [ ] Performance optimization active
+
+## 📊 Success Metrics
+- Monitoring coverage: 99.9%
+- Security compliance: 100%
+- Cost control: Budget adherence 100%
+================================================================================
+
+Issue #49: [L5] Implement Security - IAM Roles & Policies
+Labels: Prio:High, Type:Feature, L5:Observability, Comp:Security
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Security - IAM Roles & Policies for comprehensive observability, security, and governance.
+
+## 📋 Technical Requirements
+- System monitoring and alerting
+- Security compliance
+- Cost control mechanisms
+- Human oversight integration
+
+## 🎯 Acceptance Criteria
+- [ ] System implementation complete
+- [ ] Monitoring and alerting active
+- [ ] Security compliance verified
+- [ ] Performance optimization active
+
+## 📊 Success Metrics
+- Monitoring coverage: 99.9%
+- Security compliance: 100%
+- Cost control: Budget adherence 100%
+================================================================================
+
+Issue #48: [L5] Implement Security - Secrets Management
+Labels: Prio:High, Type:Feature, L5:Observability, Comp:Security
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Security - Secrets Management for comprehensive observability, security, and governance.
+
+## 📋 Technical Requirements
+- System monitoring and alerting
+- Security compliance
+- Cost control mechanisms
+- Human oversight integration
+
+## 🎯 Acceptance Criteria
+- [ ] System implementation complete
+- [ ] Monitoring and alerting active
+- [ ] Security compliance verified
+- [ ] Performance optimization active
+
+## 📊 Success Metrics
+- Monitoring coverage: 99.9%
+- Security compliance: 100%
+- Cost control: Budget adherence 100%
+================================================================================
+
+Issue #47: [L5] Implement Cost Guard & Autoscaler Rules
+Labels: Prio:High, Type:Feature, L5:Observability, Comp:Autoscaler
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Cost Guard & Autoscaler Rules for comprehensive observability, security, and governance.
+
+## 📋 Technical Requirements
+- System monitoring and alerting
+- Security compliance
+- Cost control mechanisms
+- Human oversight integration
+
+## 🎯 Acceptance Criteria
+- [ ] System implementation complete
+- [ ] Monitoring and alerting active
+- [ ] Security compliance verified
+- [ ] Performance optimization active
+
+## 📊 Success Metrics
+- Monitoring coverage: 99.9%
+- Security compliance: 100%
+- Cost control: Budget adherence 100%
+================================================================================
+
+Issue #46: [L5] Implement Centralized Monitoring & Logging (Prometheus + Grafana)
+Labels: Prio:High, Type:Feature, L5:Observability, Comp:Monitoring
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Centralized Monitoring & Logging (Prometheus + Grafana) for comprehensive observability, security, and governance.
+
+## 📋 Technical Requirements
+- System monitoring and alerting
+- Security compliance
+- Cost control mechanisms
+- Human oversight integration
+
+## 🎯 Acceptance Criteria
+- [ ] System implementation complete
+- [ ] Monitoring and alerting active
+- [ ] Security compliance verified
+- [ ] Performance optimization active
+
+## 📊 Success Metrics
+- Monitoring coverage: 99.9%
+- Security compliance: 100%
+- Cost control: Budget adherence 100%
+================================================================================
+
+Issue #45: [L4] Develop DPO Fine-Tune Process
+Labels: Prio:High, Type:Feature, L4:RL-FineTuning, Comp:Trainer
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement DPO Fine-Tune Process for continuous system improvement through reinforcement learning.
+
+## 📋 Technical Requirements
+- Training pipeline implementation
+- Reward signal processing
+- Model checkpoint management
+- Performance monitoring
+
+## 🎯 Acceptance Criteria
+- [ ] Training pipeline operational
+- [ ] Reward processing functional
+- [ ] Checkpoint management working
+- [ ] Performance metrics tracking
+
+## 📊 Success Metrics
+- Training convergence: <2 hours
+- Model improvement: >15%
+- System reliability: >98%
+================================================================================
+
+Issue #44: [L4] Develop AZ-LoRA Trainer (Mutation Agent)
+Labels: Prio:High, Type:Feature, L4:RL-FineTuning, Comp:Trainer
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement AZ-LoRA Trainer (Mutation Agent) for continuous system improvement through reinforcement learning.
+
+## 📋 Technical Requirements
+- Training pipeline implementation
+- Reward signal processing
+- Model checkpoint management
+- Performance monitoring
+
+## 🎯 Acceptance Criteria
+- [ ] Training pipeline operational
+- [ ] Reward processing functional
+- [ ] Checkpoint management working
+- [ ] Performance metrics tracking
+
+## 📊 Success Metrics
+- Training convergence: <2 hours
+- Model improvement: >15%
+- System reliability: >98%
+================================================================================
+
+Issue #43: [L4] Develop GRPO-Trainer (Cluster-Level)
+Labels: Prio:High, Type:Feature, L4:RL-FineTuning, Comp:Trainer
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement GRPO-Trainer (Cluster-Level) for continuous system improvement through reinforcement learning.
+
+## 📋 Technical Requirements
+- Training pipeline implementation
+- Reward signal processing
+- Model checkpoint management
+- Performance monitoring
+
+## 🎯 Acceptance Criteria
+- [ ] Training pipeline operational
+- [ ] Reward processing functional
+- [ ] Checkpoint management working
+- [ ] Performance metrics tracking
+
+## 📊 Success Metrics
+- Training convergence: <2 hours
+- Model improvement: >15%
+- System reliability: >98%
+================================================================================
+
+Issue #42: [L4] Develop Bandit-Trainer (Axis-Level)
+Labels: Prio:High, Type:Feature, L4:RL-FineTuning, Comp:Trainer
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Bandit-Trainer (Axis-Level) for continuous system improvement through reinforcement learning.
+
+## 📋 Technical Requirements
+- Training pipeline implementation
+- Reward signal processing
+- Model checkpoint management
+- Performance monitoring
+
+## 🎯 Acceptance Criteria
+- [ ] Training pipeline operational
+- [ ] Reward processing functional
+- [ ] Checkpoint management working
+- [ ] Performance metrics tracking
+
+## 📊 Success Metrics
+- Training convergence: <2 hours
+- Model improvement: >15%
+- System reliability: >98%
+================================================================================
+
+Issue #41: [L3] Develop MAP-Elites Grid Implementation
+Labels: Prio:High, Type:Feature, L3:MetaReview, Comp:Evolution
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement MAP-Elites Grid Implementation for the meta-review and evolution system.
+
+## 📋 Technical Requirements
+- Genetic algorithm implementation
+- Population management
+- Elite grid optimization
+- Offspring generation
+
+## 🎯 Acceptance Criteria
+- [ ] Algorithm implementation complete
+- [ ] Population management functional
+- [ ] Performance optimization active
+- [ ] Quality metrics tracking
+
+## 📊 Success Metrics
+- Grid occupancy: >80%
+- Evolution quality: >70% improvement
+- Processing time: <4 hours
+================================================================================
+
+Issue #40: [L3] Develop AZ Mutation (Prompt-Mutator)
+Labels: Prio:High, Type:Feature, L3:MetaReview, Comp:Evolution
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement AZ Mutation (Prompt-Mutator) for the meta-review and evolution system.
+
+## 📋 Technical Requirements
+- Genetic algorithm implementation
+- Population management
+- Elite grid optimization
+- Offspring generation
+
+## 🎯 Acceptance Criteria
+- [ ] Algorithm implementation complete
+- [ ] Population management functional
+- [ ] Performance optimization active
+- [ ] Quality metrics tracking
+
+## 📊 Success Metrics
+- Grid occupancy: >80%
+- Evolution quality: >70% improvement
+- Processing time: <4 hours
+================================================================================
+
+Issue #39: [L3] Develop Genetic Crossover Module
+Labels: Prio:High, Type:Feature, L3:MetaReview, Comp:Evolution
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Genetic Crossover Module for the meta-review and evolution system.
+
+## 📋 Technical Requirements
+- Genetic algorithm implementation
+- Population management
+- Elite grid optimization
+- Offspring generation
+
+## 🎯 Acceptance Criteria
+- [ ] Algorithm implementation complete
+- [ ] Population management functional
+- [ ] Performance optimization active
+- [ ] Quality metrics tracking
+
+## 📊 Success Metrics
+- Grid occupancy: >80%
+- Evolution quality: >70% improvement
+- Processing time: <4 hours
+================================================================================
+
+Issue #38: [L3] Develop Meta-Review Controller
+Labels: Prio:High, Type:Feature, L3:MetaReview, Comp:Evolution
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement Meta-Review Controller for the meta-review and evolution system.
+
+## 📋 Technical Requirements
+- Genetic algorithm implementation
+- Population management
+- Elite grid optimization
+- Offspring generation
+
+## 🎯 Acceptance Criteria
+- [ ] Algorithm implementation complete
+- [ ] Population management functional
+- [ ] Performance optimization active
+- [ ] Quality metrics tracking
+
+## 📊 Success Metrics
+- Grid occupancy: >80%
+- Evolution quality: >70% improvement
+- Processing time: <4 hours
+================================================================================
+
+Issue #37: [L2] Develop Selective Tree-Search Service (TSvc)
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Aux
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Selective Tree-Search Service (TSvc) for the dialogue-pod runtime system.
+
+## 📋 Technical Requirements
+- LLM integration and optimization
+- Memory context management
+- Performance monitoring
+- Cost control mechanisms
+
+## 🎯 Acceptance Criteria
+- [ ] Agent implementation complete
+- [ ] LLM integration functional
+- [ ] Memory context working
+- [ ] Metrics and monitoring active
+
+## 📊 Success Metrics
+- Response time: <5 seconds
+- Cost per operation: <$0.05
+- Accuracy: >85%
+================================================================================
+
+Issue #36: [L2] Develop Financial & Compliance Verdict (VERD-POD)
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Aux
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Financial & Compliance Verdict (VERD-POD) for the dialogue-pod runtime system.
+
+## 📋 Technical Requirements
+- LLM integration and optimization
+- Memory context management
+- Performance monitoring
+- Cost control mechanisms
+
+## 🎯 Acceptance Criteria
+- [ ] Agent implementation complete
+- [ ] LLM integration functional
+- [ ] Memory context working
+- [ ] Metrics and monitoring active
+
+## 📊 Success Metrics
+- Response time: <5 seconds
+- Cost per operation: <$0.05
+- Accuracy: >85%
+================================================================================
+
+Issue #35: [L2] Develop Judge Ensemble (DB-POD)
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Judge
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Judge Ensemble (DB-POD) for the dialogue-pod runtime system.
+
+## 📋 Technical Requirements
+- LLM integration and optimization
+- Memory context management
+- Performance monitoring
+- Cost control mechanisms
+
+## 🎯 Acceptance Criteria
+- [ ] Agent implementation complete
+- [ ] LLM integration functional
+- [ ] Memory context working
+- [ ] Metrics and monitoring active
+
+## 📊 Success Metrics
+- Response time: <5 seconds
+- Cost per operation: <$0.05
+- Accuracy: >85%
+================================================================================
+
+Issue #34: [L2] Develop Critic Agent (RF-POD)
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Critic
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Critic Agent (RF-POD) for the dialogue-pod runtime system.
+
+## 📋 Technical Requirements
+- LLM integration and optimization
+- Memory context management
+- Performance monitoring
+- Cost control mechanisms
+
+## 🎯 Acceptance Criteria
+- [ ] Agent implementation complete
+- [ ] LLM integration functional
+- [ ] Memory context working
+- [ ] Metrics and monitoring active
+
+## 📊 Success Metrics
+- Response time: <5 seconds
+- Cost per operation: <$0.05
+- Accuracy: >85%
+================================================================================
+
+Issue #33: [L2] Develop Creator Agent (BN-POD)
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Creator
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Creator Agent (BN-POD) for the dialogue-pod runtime system.
+
+## 📋 Technical Requirements
+- LLM integration and optimization
+- Memory context management
+- Performance monitoring
+- Cost control mechanisms
+
+## 🎯 Acceptance Criteria
+- [ ] Agent implementation complete
+- [ ] LLM integration functional
+- [ ] Memory context working
+- [ ] Metrics and monitoring active
+
+## 📊 Success Metrics
+- Response time: <5 seconds
+- Cost per operation: <$0.05
+- Accuracy: >85%
+================================================================================
+
+Issue #32: [L2] Develop Orchestrator Service (FastAPI + gRPC)
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Orchestrator
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement Orchestrator Service (FastAPI + gRPC) for the dialogue-pod runtime system.
+
+## 📋 Technical Requirements
+- LLM integration and optimization
+- Memory context management
+- Performance monitoring
+- Cost control mechanisms
+
+## 🎯 Acceptance Criteria
+- [ ] Agent implementation complete
+- [ ] LLM integration functional
+- [ ] Memory context working
+- [ ] Metrics and monitoring active
+
+## 📊 Success Metrics
+- Response time: <5 seconds
+- Cost per operation: <$0.05
+- Accuracy: >85%
+================================================================================
+
+Issue #31: [L1] Implement GRPO Cluster-Selector (Cluster-Level)
+Labels: Prio:High, Type:Feature, L1:Allocation, Comp:ML
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement core L1 functionality for macro-allocation and resource management.
+
+## 📋 Technical Requirements
+- Algorithm implementation
+- Integration with adjacent layers
+- Performance optimization
+
+## 🎯 Acceptance Criteria
+- [ ] Core functionality implemented
+- [ ] Integration tests passing
+- [ ] Performance metrics met
+
+## 📊 Success Metrics
+- Processing efficiency: >90%
+- Response time: <100ms
+- Accuracy: >95%
+================================================================================
+
+Issue #30: [L0] Implement ETL Parser
+Labels: L0:Ingestion, Prio:High, Type:Feature, Comp:ETL
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop ETL Parser as Kafka Consumer for deduplication, normalization, and field extraction into ParsedEvent schema.
+
+## 📋 Technical Requirements
+- Kafka Consumer Group implementation
+- Redis Bloom filter for deduplication
+- Language detection and normalization
+- Avro schema definition and serialization
+
+## 🎯 Acceptance Criteria
+- [ ] Kafka consumer group setup
+- [ ] Redis deduplication logic
+- [ ] ParsedEvent schema definition
+- [ ] Avro serialization implementation
+- [ ] Language detection and filtering
+
+## 📊 Success Metrics
+- Processing rate: >5k events/sec
+- Deduplication accuracy: >99%
+- Language detection accuracy: >95%
+================================================================================
+
+Issue #29: [L0] Implement Kafka Setup for Raw Events
+Labels: L0:Ingestion, Type:Chore, Comp:Infra, Prio:Critical
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Configure Kafka topics `raw_events.<axis>` for all 9 axes with appropriate partitioning, replication, and retention policies.
+
+## 📋 Technical Requirements
+- AWS MSK or self-managed Kafka cluster
+- Topic configuration for each axis
+- Monitoring and alerting setup
+
+## 🎯 Acceptance Criteria
+- [ ] Kafka cluster deployment
+- [ ] 9 raw_events topics configured
+- [ ] Partitioning and replication strategy
+- [ ] Monitoring and alerting integration
+
+## 📊 Success Metrics
+- Throughput: >10k messages/sec
+- Availability: >99.9%
+- Lag monitoring: <1000 messages
+================================================================================
+
+Issue #28: [L0] Develop Axis Crawler - Creative & Design (D)
+Labels: L0:Ingestion, Type:Feature, Comp:Crawler, Prio:Low
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for Creative & Design (D) (Creative) using Dribbble + Behance RSS + Midjourney. Crawls design content and writes raw JSON events to Kafka topic `raw_events.D`.
+
+## 📋 Technical Requirements
+- Dribbble + Behance RSS + Midjourney integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.D` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #27: [L0] Develop Axis Crawler - Spiritual/Wellness (S)
+Labels: L0:Ingestion, Type:Feature, Comp:Crawler, Prio:Low
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for Spiritual/Wellness (S) (Wellness) using InsightTimer + r/Meditation. Crawls wellness content and writes raw JSON events to Kafka topic `raw_events.S`.
+
+## 📋 Technical Requirements
+- InsightTimer + r/Meditation integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.S` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #26: [L0] Develop Axis Crawler - Marketplace Economics (M)
+Labels: L0:Ingestion, Type:Feature, Comp:Crawler, Prio:Medium
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for Marketplace Economics (M) (Financial) using SEC EDGAR scrapers. Crawls 8-K/10-K filings and writes raw JSON events to Kafka topic `raw_events.M`.
+
+## 📋 Technical Requirements
+- SEC EDGAR scrapers integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.M` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #25: [L0] Develop Axis Crawler - Crunchbase/CB Insights (C)
+Labels: L0:Ingestion, Type:Feature, Comp:Crawler, Prio:Medium
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for Crunchbase/CB Insights (C) (Business) using daily CSV or REST APIs. Crawls company/funding data and writes raw JSON events to Kafka topic `raw_events.C`.
+
+## 📋 Technical Requirements
+- daily CSV or REST APIs integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.C` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #24: [L0] Develop Axis Crawler - Patents (P)
+Labels: L0:Ingestion, Type:Feature, Comp:Crawler, Prio:Medium
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for Patents (P) (Patents) using Lens open data or PatentsView API. Crawls patent data and writes raw JSON events to Kafka topic `raw_events.P`.
+
+## 📋 Technical Requirements
+- Lens open data or PatentsView API integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.P` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #23: [L0] Develop Axis Crawler - arXiv (A)
+Labels: L0:Ingestion, Prio:High, Type:Feature, Comp:Crawler
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for arXiv (A) (Academic) using RSS feeds and OAI-PMH protocol. Crawls academic papers and writes raw JSON events to Kafka topic `raw_events.A`.
+
+## 📋 Technical Requirements
+- RSS feeds and OAI-PMH protocol integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.A` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #22: [L0] Develop Axis Crawler - GitHub (G)
+Labels: L0:Ingestion, Prio:High, Type:Feature, Comp:Crawler
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for GitHub (G) (Tech Dev) using Trending RSS + GitHub REST v3. Crawls trending repositories and writes raw JSON events to Kafka topic `raw_events.G`.
+
+## 📋 Technical Requirements
+- Trending RSS + GitHub REST v3 integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.G` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #21: [L0] Develop Axis Crawler - TikTok (T)
+Labels: L0:Ingestion, Prio:High, Type:Feature, Comp:Crawler
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for TikTok (T) (Social Media) using unofficial API or Selenium. Crawls trending content and writes raw JSON events to Kafka topic `raw_events.T`.
+
+## 📋 Technical Requirements
+- unofficial API or Selenium integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.T` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #20: [L0] Develop Axis Crawler - Reddit (R)
+Labels: L0:Ingestion, Prio:High, Type:Feature, Comp:Crawler
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Develop and deploy the Axis Crawler for Reddit (R) (Cultural Pulse) using PRAW + Pushshift APIs. Crawls niche subreddits and writes raw JSON events to Kafka topic `raw_events.R`.
+
+## 📋 Technical Requirements
+- PRAW + Pushshift APIs integration
+- Deploy as AWS Fargate ECS task with 30s-5min scheduling
+- Handle rate limiting and authentication
+- Error handling and retry logic
+
+## 🎯 Acceptance Criteria
+- [ ] API/data source integration
+- [ ] Kafka producer for `raw_events.R` topic
+- [ ] Error handling and retry logic
+- [ ] Monitoring and alerting integration
+- [ ] Rate limiting compliance
+
+## 📊 Success Metrics
+- Data collection rate: >100 items/hour
+- API error rate: <1%
+- Uptime: >99.5%
+================================================================================
+
+Issue #19: [PROJECT] Overall System Architecture Documentation
+Labels: Prio:High, Type:Documentation
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Create and maintain comprehensive documentation for the overall system architecture, including the provided specification, diagrams, and key decision logs.
+
+## 📋 Technical Requirements
+- Complete architecture specification document
+- Mermaid diagrams for data flow and RL loops
+- API documentation structure
+- Decision log template and initial entries
+
+## 🎯 Acceptance Criteria
+- [ ] Complete architecture specification document
+- [ ] Mermaid diagrams for data flow and RL loops
+- [ ] API documentation structure
+- [ ] Decision log template and initial entries
+
+## 📊 Success Metrics
+- Documentation coverage: 100% of system components
+- Diagram accuracy: Validated by technical review
+- Decision tracking: All major decisions logged
+================================================================================
+
+Issue #18: [PROJECT] Initial CI/CD Pipeline Setup
+Labels: Prio:High, Type:Chore, Comp:Infra
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Implement basic CI/CD pipeline using GitHub Actions for automated builds, linting, testing, and deployment across all layers.
+
+## 📋 Technical Requirements
+- GitHub Actions workflows for build/test
+- Automated linting and code quality checks
+- Docker image builds and registry pushes
+- Deployment automation to dev/test environments
+
+## 🎯 Acceptance Criteria
+- [ ] GitHub Actions workflows for build/test
+- [ ] Automated linting and code quality checks
+- [ ] Docker image builds and registry pushes
+- [ ] Deployment automation to dev/test environments
+
+## 📊 Success Metrics
+- Build success rate: >95%
+- Deployment time: <10 minutes
+- Test coverage: >80%
+================================================================================
+
+Issue #17: [PROJECT] Define Official Project Name and Repository Structure
+Labels: Type:Chore, Comp:Infra, Prio:Critical
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Establish the official project name, set up initial GitHub repository structure including main branches, comprehensive README, .gitignore, and contribution guidelines.
+
+## 📋 Technical Requirements
+- Repository structure definition and documentation
+- Comprehensive README with project overview and setup instructions
+- Contributing guidelines and code of conduct
+- Branch protection rules configuration
+- .gitignore for all relevant technologies
+
+## 🎯 Acceptance Criteria
+- [ ] Repository structure defined and documented
+- [ ] README with project overview and setup instructions
+- [ ] Contributing guidelines and code of conduct
+- [ ] Branch protection rules configured
+- [ ] .gitignore for all relevant technologies
+
+## 📊 Success Metrics
+- Documentation completeness: 100% coverage
+- Setup time for new developers: <30 minutes
+- Contribution workflow clarity: >90% developer satisfaction
+================================================================================
+
+Issue #16: [L5] Implement Human Jury Web Interface
+Labels: Type:Feature, L5:Observability, Comp:UI, Prio:Medium
+Milestone: Phase 4: Production & Optimization
+## 🎯 Task Objective
+Build a React-based web application for human reviewers to score and approve top-tier ideas with integration to the reward feedback loop.
+
+## 📋 Technical Requirements
+- **Frontend**: React web app with responsive design
+- **Backend**: FastAPI service for jury operations
+- **Database**: jury_session table for tracking reviews
+- **Integration**: Reward feedback to rl_reward_queue
+- **Hosting**: AWS Amplify for static hosting
+
+## 🎯 Acceptance Criteria
+- [ ] React web app operational and responsive
+- [ ] Jury scoring interface (0-10 scale) functional
+- [ ] Idea presentation with context and metadata
+- [ ] Approval/rejection workflow implemented
+- [ ] Reward integration with SQS queue
+
+## 🔧 Implementation Details
+```javascript
+// React component for idea review
+function IdeaReviewCard({ idea }) {
+  const [score, setScore] = useState(5);
+  
+  const handleApproval = async () => {
+    await fetch('/api/jury/approve', {
+      method: 'POST',
+      body: JSON.stringify({
+        idea_id: idea.id,
+        score: score,
+        reviewer_id: user.id
+      })
+    });
+  };
+  
+  return (
+    <Card>
+      <IdeaContent idea={idea} />
+      <ScoreSlider value={score} onChange={setScore} />
+      <ApprovalButtons onApprove={handleApproval} />
+    </Card>
+  );
+}
+```
+
+## 📊 Success Metrics
+- Review cycle time: <24h average
+- User experience: >4.5/5 usability score
+- System reliability: 99.5% uptime
+================================================================================
+
+Issue #15: [L5] Setup Prometheus + Grafana Monitoring Stack
+Labels: Prio:High, L5:Observability, Type:Chore, Comp:Monitoring
+Milestone: Phase 4: Production & Optimization
+## 🎯 Task Objective
+Deploy comprehensive monitoring infrastructure using Prometheus and Grafana to track metrics across all 6 system layers.
+
+## 📋 Technical Requirements
+- **Prometheus**: Multi-target scraping with service discovery
+- **Grafana**: Layer-specific dashboards with alerting
+- **Metrics**: Custom metrics from each layer component
+- **Alerting**: PagerDuty integration for critical issues
+- **Retention**: 30-day metric retention with downsampling
+
+## 🎯 Acceptance Criteria
+- [ ] Prometheus operational with all targets
+- [ ] Grafana dashboards for each layer (L0-L5)
+- [ ] Alert rules configured for critical metrics
+- [ ] PagerDuty integration working
+- [ ] Performance impact <2% on monitored services
+
+## 🔧 Key Dashboards
+- **L0 Dashboard**: Kafka lag, embedding rates, clustering metrics
+- **L1 Dashboard**: UCB scores, budget allocation, policy updates
+- **L2 Dashboard**: Pod latency, cost tracking, judge confidence
+- **L3 Dashboard**: Grid occupancy, evolution metrics, generation cycles
+- **L4 Dashboard**: Training progress, model performance, checkpoint status
+- **L5 Dashboard**: System health, cost controls, security metrics
+
+## 📊 Success Metrics
+- Metric collection: 99.9% uptime
+- Alert response: <5min for critical issues
+- Dashboard load time: <3s
+================================================================================
+
+Issue #14: [L4] Implement GRPO Policy Trainer for Cluster Selection
+Labels: Prio:High, Type:Feature, L4:RL-FineTuning, Comp:Trainer
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement the GRPO (Generalized Reward Policy Optimization) trainer that updates cluster selection policies based on accumulated reward signals.
+
+## 📋 Technical Requirements
+- **Algorithm**: Policy gradient with PPO-style updates
+- **Schedule**: Nightly training runs (00:15 UTC)
+- **Data Source**: 24h aggregated rewards from SQS
+- **Model**: 256-dimensional policy network
+- **Storage**: policy_versions table with checkpoints
+
+## 🎯 Acceptance Criteria
+- [ ] GRPO algorithm correctly implemented
+- [ ] Nightly training pipeline operational
+- [ ] Reward aggregation from SQS working
+- [ ] Policy checkpoint management functional
+- [ ] Integration with L1 cluster selection
+
+## 🔧 Implementation Details
+```python
+class GRPOTrainer:
+    def __init__(self):
+        self.policy_net = PolicyNetwork(input_dim=1536, output_dim=256)
+        self.optimizer = torch.optim.Adam(self.policy_net.parameters())
+    
+    def train_epoch(self, cluster_rewards):
+        for batch in cluster_rewards:
+            cluster_embeddings = batch['embeddings']
+            rewards = batch['rewards']
+            
+            # Policy gradient step
+            log_probs = self.policy_net.log_prob(cluster_embeddings)
+            loss = -(log_probs * rewards).mean()
+            
+            self.optimizer.zero_grad()
+            loss.backward()
+            self.optimizer.step()
+```
+
+## 📊 Success Metrics
+- Training convergence: <2h per epoch
+- Policy improvement: measurable reward increase
+- Checkpoint integrity: 100% successful saves
+================================================================================
+
+Issue #13: [L3] Implement MAP-Elites Grid for Idea Population Management
+Labels: Prio:High, Type:Feature, L3:MetaReview, Comp:Evolution
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Task Objective
+Implement the MAP-Elites grid system for organizing and maintaining the elite population of ideas indexed by novelty and feasibility dimensions.
+
+## 📋 Technical Requirements
+- **Grid Size**: 10×10 cells (expandable to 20×20)
+- **Dimensions**: Novelty (x-axis) × Feasibility (y-axis)
+- **Storage**: elite_grid table with composite scoring
+- **Selection**: Probability-based sampling for genetic operations
+- **Metrics**: Grid occupancy and diversity tracking
+
+## 🎯 Acceptance Criteria
+- [ ] 10×10 grid operational with proper indexing
+- [ ] Idea projection into grid cells working
+- [ ] Elite selection based on composite scores
+- [ ] Grid occupancy monitoring >80%
+- [ ] Selection probabilities correctly implemented
+
+## 🔧 Implementation Details
+```python
+class MAPElitesGrid:
+    def __init__(self, size=(10, 10)):
+        self.grid_size = size
+        self.grid = {}
+    
+    def add_idea(self, idea):
+        cell_x = int(idea.novelty * self.grid_size[0])
+        cell_y = int(idea.feasibility * self.grid_size[1])
+        
+        current_elite = self.grid.get((cell_x, cell_y))
+        if not current_elite or idea.composite_score > current_elite.composite_score:
+            self.grid[(cell_x, cell_y)] = idea
+            self.update_database(cell_x, cell_y, idea)
+```
+
+## 📊 Success Metrics
+- Grid occupancy: >80% cells filled
+- Diversity score: >0.6 across dimensions
+- Elite quality: continuous improvement in composite scores
+================================================================================
+
+Issue #12: [L2] Implement Judge Ensemble (DB-POD) with Multi-Model Ranking
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Judge
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement the Judge Ensemble (DB-POD) that ranks candidate ideas using multiple LLMs and updates Elo ratings for continuous quality assessment.
+
+## 📋 Technical Requirements
+- **Judge A**: Cohere Command-R+ @ T=0.0 (baseline)
+- **Judge B**: DeepSeek-R2-32B @ T=0.2 (reasoning-focused)
+- **Judge C**: Metric-based deterministic scoring
+- **Process**: Majority vote with confidence thresholds
+- **Output**: Winner selection and Elo rating updates
+
+## 🎯 Acceptance Criteria
+- [ ] Three-judge ensemble operational
+- [ ] Majority voting with tie-breaking implemented
+- [ ] Elo rating system functional
+- [ ] Confidence-based DB-POD skipping (>0.8 threshold)
+- [ ] Chain-of-thought logging for audit
+
+## 🔧 Implementation Details
+```python
+class JudgeEnsemble:
+    def __init__(self):
+        self.judge_a = CohereCommandR()
+        self.judge_b = DeepSeekR2()
+        self.judge_c = MetricBasedJudge()
+    
+    def rank_candidates(self, candidate_a, candidate_b):
+        votes = []
+        votes.append(self.judge_a.vote(candidate_a, candidate_b))
+        votes.append(self.judge_b.vote(candidate_a, candidate_b))
+        votes.append(self.judge_c.vote(candidate_a, candidate_b))
+        
+        winner = self.majority_vote(votes)
+        self.update_elo_ratings(candidate_a, candidate_b, winner)
+        return winner
+```
+
+## 📊 Success Metrics
+- Ranking consistency: >85% inter-judge agreement
+- Processing time: <15s per comparison
+- Elo stability: <5% rating drift per week
+================================================================================
+
+Issue #11: [L2] Implement Critic Agent (RF-POD) with Phi-3-mini LoRA
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Critic
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement the Critic Agent (RF-POD) that refines seed ideas through targeted feedback using Phi-3-mini with custom LoRA fine-tuning.
+
+## 📋 Technical Requirements
+- **Model**: Phi-3-mini with AZ-trained LoRA @ T=0.7
+- **Input**: Seed ideas from BN-POD + memory context
+- **Process**: Two-turn critique (feedback → revision)
+- **Integration**: TreeSearchSvc for uncertainty handling
+- **Output**: Refined ideas or rejection signals
+
+## 🎯 Acceptance Criteria
+- [ ] Phi-3-mini LoRA integration operational
+- [ ] Two-turn critique workflow implemented
+- [ ] Memory context integration working
+- [ ] TreeSearchSvc integration for uncertainty
+- [ ] Reflection scores (novelty, feasibility, TAM, risk) generated
+
+## 🔧 Implementation Details
+```python
+class CriticAgent:
+    def __init__(self):
+        self.model = load_phi3_with_lora()
+        self.temperature = 0.7
+    
+    def critique_idea(self, seed_idea, context):
+        # Turn 1: Initial feedback
+        feedback = self.model.generate(
+            prompt=f"Critique this idea: {seed_idea}\nContext: {context}"
+        )
+        
+        # Turn 2: Revision or rejection
+        if self.is_uncertain(feedback):
+            return self.call_tree_search(seed_idea, feedback)
+        
+        return self.generate_revision(seed_idea, feedback)
+```
+
+## 📊 Success Metrics
+- Critique quality: >80% acceptance rate for refined ideas
+- Processing time: <10s per critique cycle
+- Improvement rate: 25% increase in feasibility scores
+================================================================================
+
+Issue #10: [L1] Implement Sliding-UCB Bandit for Axis Budget Allocation
+Labels: Prio:High, Type:Feature, L1:Allocation, Comp:Trainer
+Milestone: Phase 2: Core Intelligence
+## 🎯 Task Objective
+Implement the sliding-window UCB bandit algorithm for dynamic allocation of crawl budget across the 9 data ingestion axes.
+
+## 📋 Technical Requirements
+- **Algorithm**: UCB with sliding window (γ=0.9, α=1.4)
+- **Update Frequency**: Hourly rebalancing
+- **Reward Source**: L2/L3 verdict outcomes
+- **Storage**: bandit_stats table in Aurora
+- **Metrics**: Prometheus metrics for monitoring
+
+## 🎯 Acceptance Criteria
+- [ ] UCB algorithm correctly implemented
+- [ ] Hourly updates operational via cron
+- [ ] Reward processing from SQS queue
+- [ ] Budget allocation responsive to performance
+- [ ] Metrics and alerting configured
+
+## 🔧 Implementation Details
+```python
+def update_ucb_bandit(axis, reward):
+    # Sliding window update
+    n_s = gamma * n_s_prev + 1
+    mu_s = (gamma * n_s_prev * mu_s_prev + reward) / n_s
+    
+    # UCB calculation
+    ucb_s = mu_s + sqrt(alpha * log(sum_n_all) / n_s)
+    
+    # Softmax allocation
+    budget_share = softmax([exp(ucb) for ucb in all_ucb])
+```
+
+## 📊 Success Metrics
+- Allocation efficiency: >90% budget utilization
+- Response time: <5min for budget updates
+- Performance tracking: measurable improvement correlation
+================================================================================
+
+Issue #9: [L0] Configure Aurora-Postgres with pgvector Extension
+Labels: L0:Ingestion, Type:Chore, Comp:Database, Prio:Critical
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Set up Aurora-Postgres database with pgvector extension for storing events, embeddings, and cluster data with proper indexing and performance optimization.
+
+## 📋 Technical Requirements
+- **Aurora Cluster**: Writer + 2 read replicas with auto-scaling
+- **pgvector Extension**: Support for 1536-dimensional vectors
+- **Schema**: events_vector, trend_clusters, population tables
+- **Indexing**: HNSW indexes for vector similarity search
+- **Backup**: Point-in-time recovery with 7-day retention
+
+## 🎯 Acceptance Criteria
+- [ ] Aurora cluster operational with pgvector
+- [ ] All required tables and indexes created
+- [ ] Vector similarity search performing <100ms
+- [ ] Backup and recovery tested
+- [ ] Connection pooling configured
+
+## 🔧 Database Schema
+```sql
+CREATE EXTENSION vector;
+
+CREATE TABLE events_vector (
+  event_id UUID PRIMARY KEY,
+  axis CHAR(1) NOT NULL,
+  title TEXT,
+  body TEXT,
+  tags TEXT[],
+  vec VECTOR(1536),
+  vec_rgat VECTOR(256),
+  created_ts TIMESTAMPTZ NOT NULL,
+  cluster_id BIGINT,
+  updated_ts TIMESTAMPTZ
+);
+
+CREATE INDEX idx_ev_vec ON events_vector USING HNSW (vec);
+```
+
+## 📊 Success Metrics
+- Query performance: <100ms for vector search
+- Storage efficiency: <10GB for 90-day retention
+- Availability: 99.95% uptime
+================================================================================
+
+Issue #8: [L0] Setup Kafka Infrastructure for Multi-Axis Data Ingestion
+Labels: L0:Ingestion, Type:Chore, Comp:Infra, Prio:Critical
+Milestone: Phase 1: Foundation
+## 🎯 Task Objective
+Set up Apache Kafka infrastructure to handle real-time data ingestion from 9 different axes with proper topic organization and scaling.
+
+## 📋 Technical Requirements
+- **Kafka Cluster**: 3-broker MSK cluster with auto-scaling
+- **Topic Structure**: raw_events.<axis> and parsed_events.<axis> topics
+- **Retention**: 7-day retention for raw, 30-day for parsed
+- **Partitioning**: 6 partitions per topic for parallel processing
+- **Security**: SASL/SCRAM authentication, encryption in transit
+
+## 🎯 Acceptance Criteria
+- [ ] MSK cluster operational with 3 brokers
+- [ ] 18 topics created (9 raw + 9 parsed)
+- [ ] Consumer groups configured for ETL processing
+- [ ] Monitoring and alerting configured
+- [ ] Performance testing completed (10k msgs/sec)
+
+## 🔧 Implementation Details
+```bash
+# Topic creation example
+kafka-topics.sh --create --topic raw_events.R --partitions 6 --replication-factor 3
+kafka-topics.sh --create --topic parsed_events.R --partitions 6 --replication-factor 3
+```
+
+## 📊 Success Metrics
+- Throughput: >10k messages/sec
+- Latency: <100ms end-to-end
+- Availability: 99.9% uptime
+================================================================================
+
+Issue #7: [L5] Epic: Observability, Security & Governance
+Labels: Type:Epic, Prio:High, L5:Observability
+Milestone: Phase 4: Production & Optimization
+## 🎯 Epic Objective
+Implement comprehensive observability, security, and governance systems including monitoring, cost controls, compliance, and human oversight capabilities.
+
+## 📋 Technical Requirements
+### Core Components
+- **Monitoring & Logging**: Prometheus + Grafana dashboards
+- **Cost Guard & Autoscaler**: Budget controls and resource scaling
+- **Security & Compliance**: Secrets management, data scrubbing, brand safety
+- **Human Jury Gate**: Web UI for human review and approval
+- **Operational Runbooks**: Deployment and fault handling procedures
+
+### Key Systems
+- Multi-layer metrics collection and alerting
+- Automated cost controls and scaling policies
+- PII scrubbing and compliance filtering
+- Human-in-the-loop approval workflows
+
+## 🎯 Success Criteria
+- [ ] Comprehensive monitoring across all 6 layers
+- [ ] Cost controls preventing budget overruns
+- [ ] Security compliance achieving 100% coverage
+- [ ] Human jury system operational with <24h review cycles
+- [ ] Operational runbooks covering all failure scenarios
+
+## 📊 Key Performance Indicators
+- **Observability**: 99.9% metric collection, <5min alert response
+- **Cost Control**: Budget adherence 100%, waste <2%
+- **Security**: Zero PII leaks, 100% compliance score
+- **Human Oversight**: Review cycle <24h, approval rate tracking
+
+## 🔗 Dependencies
+- All layers (L0-L4) operational
+- AWS infrastructure and IAM policies
+- React web app for jury interface
+- Compliance and security frameworks
+================================================================================
+
+Issue #6: [L4] Epic: Reinforcement Learning & Fine-Tuning Pipeline
+Labels: Type:Epic, Prio:High, L4:RL-FineTuning
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Epic Objective
+Implement the RL and fine-tuning system that continuously improves the system through bandit updates, GRPO policy training, AZ-LoRA fine-tuning, and DPO optimization based on recorded win/loss signals.
+
+## 📋 Technical Requirements
+### Core Components
+- **Bandit-Trainer**: Axis-level reward processing (continuous)
+- **GRPO-Trainer**: Cluster-level policy updates (nightly)
+- **AZ-LoRA Trainer**: Mutation agent fine-tuning (nightly)
+- **DPO Fine-Tuner**: Creator/Critic model optimization (weekly)
+- **Reward Queue Processing**: SQS message handling and batching
+
+### Key Algorithms
+- Sliding UCB updates with decay
+- Policy gradient optimization (PPO/GRPO)
+- LoRA fine-tuning on preference pairs
+- Direct Preference Optimization (DPO)
+
+## 🎯 Success Criteria
+- [ ] Reward processing achieving <100ms latency
+- [ ] Policy updates completing within 2h nightly
+- [ ] LoRA training improving mutation quality by 20%+
+- [ ] DPO fine-tuning enhancing model performance by 15%+
+- [ ] Self-improvement loop operational with measurable gains
+
+## 📊 Key Performance Indicators
+- **Training Efficiency**: Policy convergence <2h, LoRA training <4h
+- **Model Quality**: Performance improvement >15%, stability >95%
+- **System Reliability**: Training success rate >98%, checkpoint integrity 100%
+- **Cost Control**: Training costs <00/day, compute utilization >80%
+
+## 🔗 Dependencies
+- L2/L3 reward signal generation
+- SQS reward queue operational
+- GPU compute resources (A100/A10G)
+- Model checkpoint storage and versioning
+================================================================================
+
+Issue #5: [L3] Epic: Meta-Review & Evolution Loop
+Labels: Type:Epic, Prio:High, L3:MetaReview
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Epic Objective
+Implement the meta-review and evolution system that aggregates scored ideas into a MAP-Elites grid, performs genetic crossover and AZ mutation to generate offspring, driving continuous exploration of the idea state space.
+
+## 📋 Technical Requirements
+### Core Components
+- **Meta-Review Controller**: Aggregates L2 results into elite grid
+- **MAP-Elites Grid**: 2D grid indexed by novelty × feasibility (10×10 default)
+- **Genetic Crossover Module**: Combines parent ideas with diversity filtering
+- **AZ Mutation**: Prompt-based mutations using Phi-3-mini LoRA
+- **Offspring Enqueue**: Feeds new ideas back to L2 BN-PODs
+
+### Key Algorithms
+- MAP-Elites population management
+- ε-greedy parent selection with diversity constraints
+- Cosine similarity filtering (0.3-0.85 range)
+- LoRA-based prompt mutation with feedback integration
+
+## 🎯 Success Criteria
+- [ ] Elite grid maintaining 80%+ cell occupancy
+- [ ] Genetic crossover producing viable offspring (>70% acceptance)
+- [ ] AZ mutation improving feasibility scores by 15%+
+- [ ] Generation cycle completing within 4h
+- [ ] Lineage tracking operational for all offspring
+
+## 📊 Key Performance Indicators
+- **Grid Diversity**: Cell occupancy >80%, novelty distribution >0.6
+- **Evolution Quality**: Offspring acceptance >70%, improvement rate >15%
+- **System Performance**: Generation cycle <4h, mutation latency <30s
+- **Exploration Efficiency**: New cell discovery rate >5% per generation
+
+## 🔗 Dependencies
+- L2 population and elo_ratings tables
+- Elite grid database schema
+- Phi-3-mini LoRA checkpoints
+- Genetic algorithm parameter tuning
+================================================================================
+
+Issue #4: [L3] Epic: Meta-Review & Evolution Loop
+Labels: Type:Epic, Prio:High, L3:MetaReview
+Milestone: Phase 3: Evolution & Learning
+## 🎯 Epic Objective
+Implement the meta-review and evolution system that aggregates scored ideas into a MAP-Elites grid, performs genetic crossover and AZ mutation to generate offspring, driving continuous exploration of the idea state space.
+
+## 📋 Technical Requirements
+### Core Components
+- **Meta-Review Controller**: Aggregates L2 results into elite grid
+- **MAP-Elites Grid**: 2D grid indexed by novelty × feasibility (10×10 default)
+- **Genetic Crossover Module**: Combines parent ideas with diversity filtering
+- **AZ Mutation**: Prompt-based mutations using Phi-3-mini LoRA
+- **Offspring Enqueue**: Feeds new ideas back to L2 BN-PODs
+
+### Key Algorithms
+- MAP-Elites population management
+- ε-greedy parent selection with diversity constraints
+- Cosine similarity filtering (0.3-0.85 range)
+- LoRA-based prompt mutation with feedback integration
+
+## 🎯 Success Criteria
+- [ ] Elite grid maintaining 80%+ cell occupancy
+- [ ] Genetic crossover producing viable offspring (>70% acceptance)
+- [ ] AZ mutation improving feasibility scores by 15%+
+- [ ] Generation cycle completing within 4h
+- [ ] Lineage tracking operational for all offspring
+
+## 📊 Key Performance Indicators
+- **Grid Diversity**: Cell occupancy >80%, novelty distribution >0.6
+- **Evolution Quality**: Offspring acceptance >70%, improvement rate >15%
+- **System Performance**: Generation cycle <4h, mutation latency <30s
+- **Exploration Efficiency**: New cell discovery rate >5% per generation
+
+## 🔗 Dependencies
+- L2 population and elo_ratings tables
+- Elite grid database schema
+- Phi-3-mini LoRA checkpoints
+- Genetic algorithm parameter tuning
+================================================================================
+
+Issue #3: [L1] Epic: Macro-Allocation Layer Implementation
+Labels: Type:Epic, Prio:High, L1:Allocation
+Milestone: Phase 2: Core Intelligence
+## 🎯 Epic Objective
+Implement the macro-allocation layer that dynamically allocates crawl budget to axes and compute budget to clusters using UCB bandit algorithms and GRPO cluster selection.
+
+## 📋 Technical Requirements
+### Core Components
+- **Sliding-UCB Bandit**: Axis-level resource allocation (hourly updates)
+- **GRPO Cluster-Selector**: Cluster-level selection for pod spawning
+- **Reward Processing**: Integration with RL reward queue from L2/L3
+- **Policy Management**: Dynamic policy updates and checkpoint management
+
+### Key Algorithms
+- UCB with sliding window (γ = 0.9, α = 1.4)
+- GRPO policy gradient for cluster selection
+- Softmax budget allocation across 9 axes
+- ε-greedy exploration with decay
+
+## 🎯 Success Criteria
+- [ ] UCB bandit operational for all 9 axes
+- [ ] GRPO cluster selection achieving >0.8 quality score
+- [ ] Reward processing latency <100ms
+- [ ] Policy updates completing within 2h nightly
+- [ ] Budget rebalancing responsive to performance changes
+
+## 📊 Key Performance Indicators
+- **Allocation Efficiency**: Budget utilization >90%, waste <5%
+- **Selection Quality**: Cluster relevance score >0.8
+- **System Responsiveness**: Policy updates <2h, UCB updates <5min
+- **Cost Control**: Total allocation within budget constraints
+
+## 🔗 Dependencies
+- L0 trend_clusters operational
+- L2 reward queue established
+- Aurora-Postgres bandit_stats table
+- Policy storage and versioning system
+================================================================================
+
+Issue #2: [L2] Implement Creator Agent (BN-POD) with GPT-4o-mini
+Labels: Prio:High, L2:DialoguePod, Type:Feature, Comp:Agent-Creator
+Milestone: Phase 2: Core Intelligence
+## 🎯 Feature Objective
+Implement the Creator Agent (BN-POD) that generates initial seed ideas using GPT-4o-mini with two temperature variants for diversity.
+
+## 📋 Technical Requirements
+### Core Functionality
+- **Model**: GPT-4o-mini @ T=0.9/1.1 (two variants)
+- **Input**: user_prompt + cluster context from memory
+- **Output**: 2 seed ideas per invocation
+- **Memory Integration**: Fetch recent 2 transcripts & cluster summary (2k tokens)
+
+### Implementation Details
+- FastAPI endpoint for pod invocation
+- Memory retrieval via `memory.get_context(cluster_id, tokens=2k)`
+- LLM call with streaming callback
+- Write to `pod_transcript` (JSON messages) + `pod_metrics` (tokens, cost, latency)
+- Auto-trigger to RF-POD for each seed
+
+## 🔧 Technical Specifications
+### API Interface
+```python
+POST /pods/bn
+{
+  "task_id": "uuid",
+  "user_prompt": "string",
+  "cluster_id": "bigint",
+  "trace_id": "uuid"
+}
+```
+
+### Database Schema
+```sql
+-- pod_transcript table
+INSERT INTO pod_transcript (
+  pod_id, stage, messages, trace_id, cluster_id, created_ts
+) VALUES (?, 'BN', ?, ?, ?, now());
+
+-- pod_metrics table  
+INSERT INTO pod_metrics (
+  pod_id, agent_id, role, tokens, cost_cents, latency_ms, created_ts
+) VALUES (?, ?, 'CRT', ?, ?, ?, now());
+```
+
+## 🎯 Acceptance Criteria
+- [ ] FastAPI endpoint responds within 5s
+- [ ] Generates exactly 2 diverse seed ideas
+- [ ] Integrates with memory system for context
+- [ ] Logs all metrics (tokens, cost, latency)
+- [ ] Triggers RF-POD automatically
+- [ ] Handles uncertainty → calls TreeSearchSvc when perplexity > threshold
+- [ ] Cost per invocation < /bin/bash.05
+
+## 🧪 Testing Requirements
+- [ ] Unit tests for LLM integration
+- [ ] Integration tests with memory system
+- [ ] Load testing (50 concurrent requests)
+- [ ] Cost monitoring and alerting
+- [ ] Error handling for API failures
+
+## 📊 Success Metrics
+- **Performance**: <5s response time, >95% uptime
+- **Quality**: Idea diversity score >0.7, user acceptance >80%
+- **Cost**: </bin/bash.05 per invocation, <0/day total
+
+## 🔗 Dependencies
+- Memory system (L0) operational
+- Aurora-Postgres schema deployed
+- OpenAI API access configured
+- RF-POD endpoint ready for handoff
+================================================================================
+
+Issue #1: [L0] Epic: Signal Ingestion & Knowledge Graph Pipeline
+Labels: L0:Ingestion, Type:Epic, Prio:High
+Milestone: Phase 1: Foundation
+## 🎯 Epic Objective
+Establish the foundational layer for harvesting diverse signals from 9 axes and building a dynamic knowledge graph with clustering capabilities.
+
+## 🗺️ Scope & Context
+### In Scope
+- 9 axis crawlers (Reddit, TikTok, GitHub, arXiv, Patents, Crunchbase, SEC, Wellness, Design)
+- ETL pipeline for data normalization
+- Embedding workers with Ray on EKS
+- HDBSCAN clustering and R-GAT training
+- Aurora-Postgres with pgvector
+
+### Out of Scope
+- Advanced ML model training (covered in L4)
+- User interface components (covered in L5)
+
+## 📋 Child Issues & Tasks
+- [ ] Kafka infrastructure setup
+- [ ] Aurora-Postgres + pgvector configuration
+- [ ] Reddit crawler (R axis)
+- [ ] TikTok crawler (T axis)
+- [ ] GitHub crawler (G axis)
+- [ ] arXiv crawler (A axis)
+- [ ] ETL parser implementation
+- [ ] Ray embedding workers
+- [ ] HDBSCAN clustering job
+- [ ] R-GAT training pipeline
+
+## 🎯 Success Criteria
+- [ ] All 9 crawlers operational and feeding Kafka
+- [ ] ETL pipeline processing 150k+ events/day
+- [ ] Embedding workers generating 1536-dim vectors
+- [ ] Clustering producing meaningful trend clusters
+- [ ] 90-day retention with S3 archival working
+
+## 📈 Key Performance Indicators
+- **Technical KPIs**: Kafka lag <1000, embedding latency <2s, clustering quality >0.7
+- **Quality KPIs**: Error rates <1%, data completeness >95%
+- **Business KPIs**: Signal diversity across all 9 axes
+
+## 🗓️ Timeline & Milestones
+- **Duration**: 2 months
+- **Milestone**: Phase 1: Foundation
+================================================================================
+

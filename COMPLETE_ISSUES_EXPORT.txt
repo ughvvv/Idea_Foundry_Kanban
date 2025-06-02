@@ -1,0 +1,287 @@
+================================================================================
+GITHUB KANBAN BOARD - COMPLETE ISSUES EXPORT
+6-Layer AI System Architecture Project
+================================================================================
+
+Repository: https://github.com/ughvvv/Idea_Foundry_Kanban
+Project Board: https://github.com/users/ughvvv/projects/2
+Total Issues: 75
+Export Date: June 2, 2025
+
+================================================================================
+PROJECT OVERVIEW
+================================================================================
+
+This document contains all 75 GitHub issues for the comprehensive 6-layer AI 
+system architecture project. The system includes:
+
+L0: Signal Ingestion & Knowledge-Graph Pipeline
+L1: Macro-Allocation Layer  
+L2: Dialogue-Pod Runtime
+L3: Meta-Review & Evolution Loop
+L4: Reinforcement Learning & Fine-Tuning
+L5: Observability, Security & Governance
+
+Development Timeline: 8 months across 4 phases
+- Phase 1: Foundation (April 2025)
+- Phase 2: Core Intelligence (June 2025) 
+- Phase 3: Evolution & Learning (August 2025)
+- Phase 4: Production & Optimization (October 2025)
+
+================================================================================
+ISSUES BY LAYER
+================================================================================
+
+GENERAL PROJECT TASKS (3 issues)
+--------------------------------
+- [PROJECT] Define Official Project Name and Repository Structure
+- [PROJECT] Initial CI/CD Pipeline Setup  
+- [PROJECT] Overall System Architecture Documentation
+
+L0: SIGNAL INGESTION & KNOWLEDGE GRAPH (17 issues)
+--------------------------------------------------
+- [L0] Epic: Signal Ingestion & Knowledge Graph Pipeline
+- [L0] Develop Axis Crawler - Reddit (R)
+- [L0] Develop Axis Crawler - TikTok (T)
+- [L0] Develop Axis Crawler - GitHub (G)
+- [L0] Develop Axis Crawler - arXiv (A)
+- [L0] Develop Axis Crawler - Patents (P)
+- [L0] Develop Axis Crawler - Crunchbase/CB Insights (C)
+- [L0] Develop Axis Crawler - Marketplace Economics (M)
+- [L0] Develop Axis Crawler - Spiritual/Wellness (S)
+- [L0] Develop Axis Crawler - Creative & Design (D)
+- [L0] Setup Kafka Infrastructure for Multi-Axis Data Ingestion
+- [L0] Configure Aurora-Postgres with pgvector Extension
+- [L0] Implement Kafka Setup for Raw Events
+- [L0] Implement ETL Parser
+- [L0] Set up Embedding Workers (Ray on EKS)
+- [L0] Develop Nightly Graph-Build Job - HDBSCAN Clustering
+- [L0] Develop Nightly Graph-Build Job - R-GAT Embedding
+- [L0] Develop Nightly Graph-Build Job - Trend Clusters Management
+- [L0] Set up Monitoring & Alerts
+
+L1: MACRO-ALLOCATION LAYER (4 issues)
+-------------------------------------
+- [L1] Epic: Macro-Allocation Layer Implementation
+- [L1] Implement Sliding-UCB Bandit for Axis Budget Allocation
+- [L1] Implement GRPO Cluster-Selector (Cluster-Level)
+- [L1] Define Data Interfaces and Contracts
+- [L1] Set up Monitoring & Alerts
+
+L2: DIALOGUE-POD RUNTIME (11 issues)
+------------------------------------
+- [L2] Implement Creator Agent (BN-POD) with GPT-4o-mini
+- [L2] Implement Critic Agent (RF-POD) with Phi-3-mini LoRA
+- [L2] Implement Judge Ensemble (DB-POD) with Multi-Model Ranking
+- [L2] Develop Orchestrator Service (FastAPI + gRPC)
+- [L2] Develop Creator Agent (BN-POD)
+- [L2] Develop Critic Agent (RF-POD)
+- [L2] Develop Judge Ensemble (DB-POD)
+- [L2] Develop Financial & Compliance Verdict (VERD-POD)
+- [L2] Develop Selective Tree-Search Service (TSvc)
+- [L2] Define Data Stores & Schemas
+- [L2] Implement Scaling & Cost Control Mechanisms
+- [L2] Define Interfaces with Adjacent Layers
+- [L2] Set up Monitoring & Alerts
+
+L3: META-REVIEW & EVOLUTION (6 issues)
+--------------------------------------
+- [L3] Epic: Meta-Review & Evolution Loop
+- [L3] Implement MAP-Elites Grid for Idea Population Management
+- [L3] Develop Meta-Review Controller
+- [L3] Develop Genetic Crossover Module
+- [L3] Develop AZ Mutation (Prompt-Mutator)
+- [L3] Develop MAP-Elites Grid Implementation
+- [L3] Implement Offspring Enqueue Mechanism
+- [L3] Define Data Stores & Schemas
+- [L3] Set up Monitoring & Alerts
+
+L4: REINFORCEMENT LEARNING & FINE-TUNING (8 issues)
+---------------------------------------------------
+- [L4] Epic: Reinforcement Learning & Fine-Tuning Pipeline
+- [L4] Implement GRPO Policy Trainer for Cluster Selection
+- [L4] Develop Bandit-Trainer (Axis-Level)
+- [L4] Develop GRPO-Trainer (Cluster-Level)
+- [L4] Develop AZ-LoRA Trainer (Mutation Agent)
+- [L4] Develop DPO Fine-Tune Process
+- [L4] Set up rl_reward_queue (SQS)
+- [L4] Define Interfaces with Adjacent Layers
+- [L4] Implement Scaling & Cost Controls for Trainers
+- [L4] Set up Monitoring & Alerts for Trainers
+
+L5: OBSERVABILITY, SECURITY & GOVERNANCE (9 issues)
+---------------------------------------------------
+- [L5] Epic: Observability, Security & Governance
+- [L5] Setup Prometheus + Grafana Monitoring Stack
+- [L5] Implement Human Jury Web Interface
+- [L5] Implement Centralized Monitoring & Logging (Prometheus + Grafana)
+- [L5] Implement Cost Guard & Autoscaler Rules
+- [L5] Implement Security - Secrets Management
+- [L5] Implement Security - IAM Roles & Policies
+- [L5] Implement Human Jury Gate - Backend & Table
+- [L5] Implement Human Jury Gate - UI
+- [L5] Implement Security - Data Scrubbing
+- [L5] Implement Security - Compliance Filter in VERD-POD
+- [L5] Create Operational Runbooks
+
+DEPLOYMENT & SCALING (4 issues)
+-------------------------------
+- [DEPLOY] Set up Dev Environment
+- [DEPLOY] Set up Test Environment
+- [DEPLOY] Set up Prod Environment
+- [DEPLOY] Configure Auto-Scaling Profiles
+
+================================================================================
+LABEL SYSTEM
+================================================================================
+
+LAYER LABELS (6):
+- L0:Ingestion - Signal ingestion & knowledge graph pipeline
+- L1:Allocation - Macro-allocation layer for resource management
+- L2:DialoguePod - Dialogue-pod runtime and agent interactions
+- L3:MetaReview - Meta-review & evolution loop with genetic algorithms
+- L4:RL-FineTuning - Reinforcement learning & fine-tuning systems
+- L5:Observability - Observability, security & governance
+
+TYPE LABELS (7):
+- Type:Epic - Large, multi-issue initiatives spanning weeks/months
+- Type:Feature - New functionality or enhancement
+- Type:Bug - Bug fixes and error corrections
+- Type:Chore - Maintenance, setup, refactoring, infrastructure
+- Type:Documentation - Documentation tasks and updates
+- Type:Research - Investigation, research, and proof-of-concept work
+- Type:Security - Security-related tasks and compliance
+
+COMPONENT LABELS (15):
+- Comp:Crawler - Data crawling components (9 axes)
+- Comp:ETL - Extract, transform, load pipelines
+- Comp:Embedding - Embedding and vector operations
+- Comp:Database - Database operations and schema management
+- Comp:Orchestrator - Orchestration services and task management
+- Comp:Agent-Creator - Creator agent components (BN-POD)
+- Comp:Agent-Critic - Critic agent components (RF-POD)
+- Comp:Agent-Judge - Judge agent components (DB-POD)
+- Comp:Agent-Aux - Auxiliary agents (TSvc, Verdict)
+- Comp:Trainer - ML training components and pipelines
+- Comp:Monitoring - Monitoring and observability systems
+- Comp:Infra - Infrastructure and DevOps components
+- Comp:Security - Security components and compliance
+- Comp:UI - User interface components
+- Comp:Evolution - Genetic algorithms and evolution systems
+- Comp:ML - Machine learning components and models
+- Comp:Autoscaler - Auto-scaling logic and cost controls
+- Comp:Governance - Human oversight and governance systems
+- Comp:Ops - Operations and maintenance
+
+PRIORITY LABELS (4):
+- Prio:Critical - Must be done immediately - blocking other work
+- Prio:High - Important for current milestone/sprint
+- Prio:Medium - Standard priority - normal development flow
+- Prio:Low - Nice to have - future work or optimizations
+
+================================================================================
+AUTOMATION SCRIPTS
+================================================================================
+
+The following scripts were created to automate the GitHub Kanban board setup:
+
+1. scripts/setup-github-kanban.sh
+   - Complete initial setup automation
+   - Creates all labels, milestones, and project structure
+
+2. scripts/create-all-issues.sh
+   - First batch issue creation (15 core issues)
+   - Bash script for initial issue deployment
+
+3. scripts/create-all-85-issues.py
+   - Comprehensive Python script (39 additional issues)
+   - Programmatic issue creation with detailed templates
+
+4. scripts/create-missing-issues.py
+   - Final missing issues script (21 remaining issues)
+   - Completes the full 75-issue deployment
+
+================================================================================
+TECHNICAL ARCHITECTURE SUMMARY
+================================================================================
+
+The 6-layer system implements a sophisticated AI architecture for automated 
+ideation and evolution:
+
+L0 (Signal Ingestion): Harvests diverse signals from 9 axes (Reddit, TikTok, 
+GitHub, arXiv, Patents, Crunchbase, SEC, Wellness, Design) and builds a 
+dynamic knowledge graph with clustering.
+
+L1 (Macro-Allocation): Dynamically allocates crawl budget to axes and compute 
+budget to clusters using UCB bandit algorithms and GRPO cluster selection.
+
+L2 (Dialogue-Pod Runtime): Multi-stage ideation pipeline with LLM-based agents 
+(Creators, Critics, Judges, Specialists) for idea generation, refinement, 
+debate, ranking, and financial/compliance verdicts.
+
+L3 (Meta-Review & Evolution): Aggregates scored ideas into MAP-Elites grid, 
+performs genetic crossover and AZ mutation to generate offspring ideas.
+
+L4 (Reinforcement Learning): Continuously improves system through bandit 
+updates, GRPO policy training, AZ-LoRA fine-tuning, and DPO optimization.
+
+L5 (Observability & Governance): Comprehensive monitoring, cost controls, 
+security compliance, and human oversight capabilities.
+
+================================================================================
+DEVELOPMENT PHASES
+================================================================================
+
+PHASE 1: FOUNDATION (Months 1-2)
+- Repository setup and CI/CD
+- Kafka infrastructure and raw event topics  
+- Aurora-Postgres + pgvector setup
+- Core crawler development (R, T, G, A)
+- ETL parser implementation
+- Basic monitoring setup
+
+PHASE 2: CORE INTELLIGENCE (Months 3-4)
+- Embedding workers (Ray on EKS)
+- L2 Orchestrator and data schemas
+- Creator and Critic agents (BN-POD, RF-POD)
+- Judge ensemble (DB-POD)
+- L1 UCB Bandit and GRPO selector
+- HDBSCAN clustering pipeline
+
+PHASE 3: EVOLUTION & LEARNING (Months 5-6)
+- L3 Meta-Review controller and elite grid
+- Genetic crossover and AZ mutation
+- L4 reward queue and trainers
+- VERD-POD and TSvc implementation
+- Cost controls and autoscaling
+- Security implementation
+
+PHASE 4: PRODUCTION & OPTIMIZATION (Months 7-8)
+- Production environment deployment
+- Human jury gate implementation
+- Performance optimization
+- Operational runbooks
+- Full monitoring and alerting
+- Load testing and validation
+
+================================================================================
+CONTACT & RESOURCES
+================================================================================
+
+Repository: https://github.com/ughvvv/Idea_Foundry_Kanban
+Project Board: https://github.com/users/ughvvv/projects/2
+
+Documentation:
+- README.md - Project overview and navigation
+- KANBAN_SETUP.md - Detailed GitHub Projects configuration
+- TASK_BREAKDOWN.md - Complete task breakdown with 85+ tasks
+- LABELS_AND_TEMPLATES.md - Label system and issue templates
+- DEPLOYMENT_STRATEGY.md - Infrastructure and scaling strategy
+- QUICK_START.md - Streamlined setup guide
+
+This export contains the complete project structure for implementing a 
+sophisticated 6-layer AI system for automated ideation and evolution.
+
+================================================================================
+END OF EXPORT
+================================================================================
